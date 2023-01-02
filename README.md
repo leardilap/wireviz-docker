@@ -18,9 +18,19 @@
 
 ## Create alias in Host to run from command line 
 
-    echo "Wireviz" >> /home/$USER/.bashrc
-    echo "alias wireviz='docker run --rm -u $(id -u):$(id -u) -v $(pwd):/home -w /home wireviz-docker wireviz'" >> /home/$USER/.bashrc
+add the following to your .bashrc file 
+
+    # Wireviz 
+
+    alias wireviz='docker run --rm -u "${id -u}:${id -u}" -v "${pwd}":/home -w /home wireviz-docker wireviz'
+
+then source it 
+    
     source /home/$USER/.bashrc
+  
+and execute now from any folder 
+  
     wireviz FILE.yml
+    
     
     
